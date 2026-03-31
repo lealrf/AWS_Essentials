@@ -38,7 +38,7 @@ resource "aws_security_group" "app_sg" {
 # Launch the EC2 Instance (Free Tier Eligible)
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.amazon_linux.id
-  instance_type = "t2.micro" # Free Tier eligible
+  instance_type = "t3.micro" # Updated to t3.micro for Free Tier compatibility
 
   vpc_security_group_ids = [aws_security_group.app_sg.id]
 
